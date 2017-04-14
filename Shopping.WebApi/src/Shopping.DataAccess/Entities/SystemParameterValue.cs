@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Shopping.DataAccess.Entities
 {
-    public class SystemParameterValue : BaseEntity
+    public class SystemParameterValue :BaseEntity
     {
         public string Value { get; set; }
         public DateTime? ValidFrom { get; set; }

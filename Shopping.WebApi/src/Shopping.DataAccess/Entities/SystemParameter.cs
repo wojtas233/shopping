@@ -12,6 +12,6 @@ namespace Shopping.DataAccess.Entities
         public long SystemTranslationId { get; set; }
         public virtual SystemTranslation SystemTranslation { get; set; }
         public virtual ICollection<SystemParameterValue> SystemParameterValue { get; set; }
-
+                
     }
 }

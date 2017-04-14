@@ -7,5 +7,6 @@ namespace Shopping.Business.Interfaces
 {
     public interface ITestBusiness
     {
+        string GetTestName();
     }
 }

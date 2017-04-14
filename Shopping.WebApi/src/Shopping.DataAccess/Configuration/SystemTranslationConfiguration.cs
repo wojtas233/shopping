@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Shopping.DataAccess.Entities;
 
-namespace Shopping.DataAccess.Configurations
+namespace Shopping.DataAccess.Configuration
 {
-    public class SystemTranslationConfiguration
+    public class SystemTranslationConfiguration 
     {
         public SystemTranslationConfiguration(EntityTypeBuilder<SystemTranslation> entityBuilder)
         {
@@ -15,9 +15,9 @@ namespace Shopping.DataAccess.Configurations
             entityBuilder
                 .HasOne(t => t.SystemLanguage)
                 .WithMany(t => t.SystemTranslation)
-                .HasForeignKey(t => t.SystemLanguageId)
+                .HasForeignKey(t => t.SystemLanguageId)                
                 .IsRequired();
-
+            
         }
     }
 }

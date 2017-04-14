@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Shopping.DataAccess.Entities;
 
-namespace Shopping.DataAccess.Configurations
+namespace Shopping.DataAccess.Configuration
 {
     public class SystemLanguageConfiguration
     {

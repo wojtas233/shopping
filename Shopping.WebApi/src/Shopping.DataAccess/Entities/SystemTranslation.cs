@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Shopping.DataAccess.Entities
 {
-    public class SystemTranslation : BaseEntity
+    public class SystemTranslation :BaseEntity
     {
         public string Text { get; set; }
         public long SystemLanguageId { get; set; }

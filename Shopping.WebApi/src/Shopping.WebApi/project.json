@@ -1,14 +1,65 @@
 {
-  "version": "1.0.0-*",
-
   "dependencies": {
-    "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.1.1",
-    "NETStandard.Library": "1.6.0"
+    "Microsoft.NETCore.App": {
+      "version": "1.0.3",
+      "type": "platform"
+    },
+    "Microsoft.AspNetCore.Mvc": "1.0.2",
+    "Microsoft.AspNetCore.Routing": "1.0.2",
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.1",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.2",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.1",
+    "Microsoft.Extensions.Configuration.FileExtensions": "1.0.1",
+    "Microsoft.Extensions.Configuration.Json": "1.0.1",
+    "Microsoft.Extensions.Logging": "1.1.0",
+    "Microsoft.Extensions.Logging.Console": "1.0.1",
+    "Microsoft.Extensions.Logging.Debug": "1.0.1",
+    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.1",
+    "Shopping.Common": "1.0.0",
+    "Autofac.Extensions.DependencyInjection": "4.0.0",
+    "NLog.Web.AspNetCore": "4.3.0",
+    "IdentityServer4.AccessTokenValidation": "1.0.5",
+    "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
+    "Microsoft.AspNetCore.Authentication.OpenIdConnect": "1.0.0",
+    "Shopping.DataAccess": "1.0.0-*",
+    "Shopping.Services": "1.0.0-*"
+  },
+
+  "tools": {
+    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-003156"
   },
 
   "frameworks": {
-    "netstandard1.6": {
-      "imports": "dnxcore50"
+    "netcoreapp1.0": {
+      "imports": [
+        "dotnet5.6",
+        "portable-net45+win8"
+      ]
     }
+  },
+
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true
+  },
+
+  "runtimeOptions": {
+    "configProperties": {
+      "System.GC.Server": true
+    }
+  },
+
+  "publishOptions": {
+    "include": [
+      "wwwroot",
+      "**/*.cshtml",
+      "appsettings.json",
+      "web.config",
+      "nlog.config"
+    ]
+  },
+
+  "scripts": {
+    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
   }
 }

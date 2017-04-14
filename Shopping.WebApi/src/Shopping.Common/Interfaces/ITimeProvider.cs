@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Shopping.Business
+namespace Shopping.Common.Interfaces
 {
-    public class Class1
+    public interface ITimeProvider
     {
-        public Class1()
-        {
-        }
+        DateTime Now();
     }
 }
